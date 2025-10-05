@@ -65,7 +65,7 @@ export default function HigherConsultingSite() {
           </div>
         </div>
       </section>
-{/* Image Gallery Section */}
+      
       <section id="gallery" className="py-10 bg-gray-100">
         <div className="max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
           <motion.div
@@ -97,6 +97,7 @@ export default function HigherConsultingSite() {
             ))}
           </motion.div>
         </div>
+        
       </section>
      <section id="services" className="py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4">
