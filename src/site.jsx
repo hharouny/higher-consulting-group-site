@@ -67,10 +67,10 @@ export default function HigherConsultingSite() {
       </section>
 
      <section id="services" className="py-16 md:py-24">
-  <div className="max-w-6xl mx-auto px-4">
-    <h2 className="text-3xl md:text-4xl font-bold">Core services</h2>
-    <p className="text-gray-700 mt-2 max-w-prose">
-      Engineering & Realty Services for property and infrastructure development.
+      <div className="max-w-6xl mx-auto px-4">
+      <h2 className="text-3xl md:text-4xl font-bold">Core services</h2>
+      <p className="text-gray-700 mt-2 max-w-prose">
+      Engineering & realty services for property and infrastructure development.
     </p>
 
     <div className="mt-8 grid md:grid-cols-3 gap-6">
@@ -80,7 +80,7 @@ export default function HigherConsultingSite() {
         title="Property Development"
         bullets={[
           "Land acquisition support & early due diligence (title, survey, environmental, utilities)",
-          "Planning, zoning, and civil engineering coordination",
+          "Planning, zoning, and civil engineering services",
           "Construction management & owner’s rep services",
         ]}
       />
@@ -90,7 +90,7 @@ export default function HigherConsultingSite() {
         icon={Workflow}
         title="Redevelopment & Permit Assistance"
         bullets={[
-          "Small-site conversions and adaptive reuse strategies",
+          "Small-sclae redevelopment projects inlcuding additions and alterations",
           "Entitlements, permits, and agency coordination",
           "Contractor bidding, plan check, and inspections support",
         ]}
