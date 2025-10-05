@@ -66,30 +66,49 @@ export default function HigherConsultingSite() {
         </div>
       </section>
 
-      <section id="services" className="py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold">Core services</h2>
-          <p className="text-gray-700 mt-2 max-w-prose">Engineering & Realty for property development, plus SCWP feasibility and municipal support.</p>
+     <section id="services" className="py-16 md:py-24">
+  <div className="max-w-6xl mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-bold">Core services</h2>
+    <p className="text-gray-700 mt-2 max-w-prose">
+      Engineering & Realty Services for property and infrastructure development.
+    </p>
 
-          <div className="mt-8 grid md:grid-cols-3 gap-6">
-            <ServiceCard icon={Droplets} title="SCWP Feasibility & Funding" bullets={[
-              "Concept to SCWIP submission packages",
-              "Prioritization & scoring support",
-              "Grant writing & documentation",
-            ]}/>
-            <ServiceCard icon={Workflow} title="Program & Process Design" bullets={[
-              "Property Rehab & Code workflows",
-              "Templates, checklists, SLAs",
-              "Training & change management",
-            ]}/>
-            <ServiceCard icon={HardHat} title="Engineering & Field Integration" bullets={[
-              "Inspections & case tracking",
-              "Metrics, dashboards, reviews",
-              "Handoffs & escalation paths",
-            ]}/>
-          </div>
-        </div>
-      </section>
+    <div className="mt-8 grid md:grid-cols-3 gap-6">
+      {/* 1) Property Development */}
+      <ServiceCard
+        icon={Building2}
+        title="Property Development"
+        bullets={[
+          "Land acquisition support & early due diligence (title, survey, environmental, utilities)",
+          "Planning, zoning, and civil engineering coordination",
+          "Construction management & owner’s rep services",
+        ]}
+      />
+
+      {/* 2) Redevelopment & Permit Assistance */}
+      <ServiceCard
+        icon={Workflow}
+        title="Redevelopment & Permit Assistance"
+        bullets={[
+          "Small-site conversions and adaptive reuse strategies",
+          "Entitlements, permits, and agency coordination",
+          "Contractor bidding, plan check, and inspections support",
+        ]}
+      />
+
+      {/* 3) SCWP Feasibility Study Development */}
+      <ServiceCard
+        icon={Droplets}
+        title="SCWP Feasibility Study Development"
+        bullets={[
+          "Needs assessment: identify priorities, sites, and constraints",
+          "Concept development & benefit analysis (water quality/supply, community)",
+          "Prepare applications for Infrastructure Program funding (SCWP)",
+        ]}
+      />
+    </div>
+  </div>
+</section>
 
       <section id="approach" className="py-16 bg-white border-t">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 items-start">
