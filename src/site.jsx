@@ -65,17 +65,7 @@ export default function HigherConsultingSite() {
           </div>
         </div>
       </section>
-
-     <section id="services" className="py-16 md:py-24">
-      <div className="max-w-6xl mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold">Core services</h2>
-      <p className="text-gray-700 mt-2 max-w-prose">
-      Engineering & realty services for property and infrastructure development.
-    </p>
-        </div>
-      </section>
-
-      {/* Image Gallery Section */}
+{/* Image Gallery Section */}
       <section id="gallery" className="py-10 bg-gray-100">
         <div className="max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
           <motion.div
@@ -108,8 +98,17 @@ export default function HigherConsultingSite() {
           </motion.div>
         </div>
       </section>
-
      <section id="services" className="py-16 md:py-24">
+      <div className="max-w-6xl mx-auto px-4">
+      <h2 className="text-3xl md:text-4xl font-bold">Core services</h2>
+      <p className="text-gray-700 mt-2 max-w-prose">
+      Engineering & realty services for property and infrastructure development.
+    </p>
+        </div>
+      </section>
+
+      
+      <section id="services" className="py-16 md:py-24">
 
     <div className="mt-8 grid md:grid-cols-3 gap-6">
       {/* 1) Property Development */}
