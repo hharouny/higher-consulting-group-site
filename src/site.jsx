@@ -72,6 +72,44 @@ export default function HigherConsultingSite() {
       <p className="text-gray-700 mt-2 max-w-prose">
       Engineering & realty services for property and infrastructure development.
     </p>
+        </div>
+      </section>
+
+      {/* Image Gallery Section */}
+      <section id="gallery" className="py-10 bg-gray-100">
+        <div className="max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
+          <motion.div
+            className="flex"
+            initial={{ x: 0 }}
+            animate={{ x: ["0%", "-100%"] }}
+            transition={{
+              repeat: Infinity,
+              duration: 45,
+              ease: "linear",
+            }}
+          >
+            {[
+              { src: "/images/Land-Development.png", alt: "Aerial view of land development" },
+              { src: "/images/Property-Development-1.png", alt: "Engineers reviewing plans at construction site" },
+              { src: "/images/Property-Development-2.png", alt: "Construction team managing property development" },
+              { src: "/images/Redevelopment.png", alt: "Small-scale redevelopment project" },
+              { src: "/images/Addition.png", alt: "Building addition and alterations" },
+              { src: "/images/Stormwater-capture.png", alt: "Stormwater capture BMP installation with drywells" },
+            ].map((img, i) => (
+              <img
+                key={i}
+                src={img.src}
+                alt={img.alt}
+                className="w-full object-cover flex-shrink-0"
+                style={{ minWidth: "100%" }}
+                loading="lazy"
+              />
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+     <section id="services" className="py-16 md:py-24">
 
     <div className="mt-8 grid md:grid-cols-3 gap-6">
       {/* 1) Property Development */}
