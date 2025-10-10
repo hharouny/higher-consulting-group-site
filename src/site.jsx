@@ -133,53 +133,48 @@ export default function HigherConsultingSite() {
         </div>
       </section>
 
-      {/* IMAGE GALLERY */}
-      <section id="gallery" className="py-4 bg-gray-100">
-        <div className="max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
-          <motion.div
-            className="flex"
-            initial={{ x: 0 }}
-            animate={{ x: ["0%", "-100%"] }}
-            transition={{ repeat: Infinity, duration: 45, ease: "linear" }}
-          >
-            {[
-              {
-                src: "/images/Land-Development.png",
-                alt: "Aerial view of land development",
-              },
-              {
-                src: "/images/Property-Development-1.png",
-                alt: "Engineers reviewing plans at construction site",
-              },
-              {
-                src: "/images/Property-Development-2.png",
-                alt: "Construction team managing property development",
-              },
-              {
-                src: "/images/Redevelopment.png",
-                alt: "Small-scale redevelopment project",
-              },
-              {
-                src: "/images/Addition.png",
-                alt: "Building addition and alterations",
-              },
-              {
-                src: "/images/Stormwater-capture.png",
-                alt: "Stormwater capture BMP installation with drywells",
-              },
-            ].map((img, i) => (
-              <img
-                key={i}
-                src={img.src}
-                alt={img.alt}
-                className="w-full object-cover flex-shrink-0"
-                style={{ minWidth: "100%" }}
-                loading="lazy"
-              />
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      {/* IMAGE GALLERY (seamless marquee) */}
+<section id="gallery" className="py-6 bg-gray-100">
+  <div className="max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
+    <motion.div
+      className="flex"
+      // We duplicate the images and only scroll half the track (-50%)
+      style={{ width: "200%" }}
+      animate={{ x: ["0%", "-50%"] }}
+      transition={{ repeat: Infinity, duration: 22, ease: "linear" }} // lower = faster
+    >
+      {[ // your images once...
+        "/images/Land-Development.png",
+        "/images/Property-Development-1.png",
+        "/images/Property-Development-2.png",
+        "/images/Redevelopment.png",
+        "/images/Addition.png",
+        "/images/Stormwater-capture.png",
+      // ...and again to loop seamlessly
+      ].concat([
+        "/images/Land-Development.png",
+        "/images/Property-Development-1.png",
+        "/images/Property-Development-2.png",
+        "/images/Redevelopment.png",
+        "/images/Addition.png",
+        "/images/Stormwater-capture.png",
+      ]).map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt=""
+          className="h-56 md:h-64 lg:h-72 object-cover flex-shrink-0 rounded-none"
+          // Each image gets a fixed width so several are visible at once.
+          // Adjust w-[...%] to show more/less at a time.
+          style={{ width: "25%" }} // ~4 images visible; try "20%" for 5, "33.333%" for 3
+          loading="lazy"
+          draggable="false"
+        />
+      ))}
+    </motion.div>
+  </div>
+</section>
+
 
       {/* SERVICES */}
       <section id="services" className="py-16 md:py-24">
