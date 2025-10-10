@@ -66,7 +66,7 @@ export default function HigherConsultingSite() {
       {/* HERO */}
       <section id="home" className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-teal-50" />
-        <div className="max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+        <div className="max-w-6xl mx-auto px-4 py-6 md:py-8 grid md:grid-cols-2 gap-8 items-center">
           <div>
             <span className="text-xs uppercase tracking-widest text-blue-700">
               Municipal & Public-Sector Advisory
@@ -134,7 +134,7 @@ export default function HigherConsultingSite() {
       </section>
 
       {/* IMAGE GALLERY */}
-      <section id="gallery" className="py-10 bg-gray-100">
+      <section id="gallery" className="py-4 bg-gray-100">
         <div className="max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
           <motion.div
             className="flex"
