@@ -71,9 +71,9 @@ export default function HigherConsultingSite() {
         {/* Background image rotation */}
         <motion.div className="absolute inset-0">
           {[
-            "/images/listen.jpg",
-            "/images/design.jpg",
-            "/images/deliver.jpg",
+            "/images/listen.png",
+            "/images/design.png",
+            "/images/deliver.png",
           ].map((img, i) => (
             <motion.div
               key={i}
