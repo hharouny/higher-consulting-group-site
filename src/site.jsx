@@ -63,118 +63,102 @@ export default function HigherConsultingSite() {
         </div>
       </header>
 
-      {/* HERO */}
-      <section id="home" className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-teal-50" />
-        <div className="max-w-6xl mx-auto px-4 py-6 md:py-8 grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <span className="text-xs uppercase tracking-widest text-blue-700">
-              Municipal & Public-Sector Advisory
-            </span>
-            <h2 className="mt-3 text-4xl md:text-5xl font-extrabold leading-tight">
-              Practical expertise for{" "}
-              <span className="text-blue-700">Safe, Clean Water</span> and
-              resilient communities
-            </h2>
-            <p className="mt-4 text-gray-700 max-w-prose">
-              Higher Consulting Group partners with counties and cities to
-              deliver stormwater capture projects, SCWP feasibility studies, and
-              capital delivery support—combining engineering discipline with
-              clear processes and accountability.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="#services"
-                className="rounded-2xl bg-blue-600 text-white px-5 py-3 shadow hover:bg-blue-700"
-              >
-                Explore services
-              </a>
-              <a
-                href="#contact"
-                className="rounded-2xl bg-white px-5 py-3 shadow border hover:bg-gray-50"
-              >
-                Request a consultation
-              </a>
-            </div>
-          </div>
+      {/* HERO - Fade Transition */}
+      <section
+        id="home"
+        className="relative h-[550px] flex items-center justify-center text-center overflow-hidden"
+      >
+        {/* Background image rotation */}
+        <motion.div className="absolute inset-0">
+          {[
+            "/images/listen.jpg",
+            "/images/design.jpg",
+            "/images/deliver.jpg",
+          ].map((img, i) => (
+            <motion.div
+              key={i}
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${img})` }}
+              initial={{ opacity: i === 0 ? 1 : 0 }}
+              animate={{ opacity: [i === 0 ? 1 : 0, 1, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 18,
+                ease: "easeInOut",
+                delay: i * 6,
+              }}
+            />
+          ))}
+          <div className="absolute inset-0 bg-black/40" />
+        </motion.div>
 
-          <div className="md:pl-6">
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                {
-                  icon: Droplets,
-                  title: "SCWP & Compliance",
-                  text: "Strategy, scoring, and funding roadmaps.",
-                },
-                {
-                  icon: Building2,
-                  title: "Engineering & Realty",
-                  text: "Entitlements, permitting, stakeholder coordination.",
-                },
-                {
-                  icon: ShieldCheck,
-                  title: "Code & Standards",
-                  text: "Program design, notices, hearings (BRAB).",
-                },
-                {
-                  icon: FileSpreadsheet,
-                  title: "Reporting & Funding",
-                  text: "Board updates, FEMA/PA documentation, dashboards.",
-                },
-              ].map((c, i) => (
-                <div key={i} className="rounded-2xl bg-white p-5 shadow-sm border">
-                  <c.icon className="w-6 h-6 text-blue-700" />
-                  <h3 className="mt-3 font-semibold">{c.title}</h3>
-                  <p className="text-sm text-gray-600 mt-1">{c.text}</p>
-                </div>
-              ))}
-            </div>
+        {/* Text overlay */}
+        <div className="relative z-10 text-white max-w-3xl px-4">
+          <h1 className="text-5xl md:text-6xl font-extrabold">
+            We <span className="text-blue-400">Listen</span>. We{" "}
+            <span className="text-teal-400">Design</span>. We{" "}
+            <span className="text-blue-300">Deliver</span>.
+          </h1>
+          <p className="mt-4 text-lg md:text-xl text-gray-200">
+            Practical engineering and realty expertise for property and
+            infrastructure development.
+          </p>
+          <div className="mt-8 flex justify-center gap-4">
+            <a
+              href="#services"
+              className="rounded-2xl bg-blue-600 text-white px-5 py-3 shadow hover:bg-blue-700"
+            >
+              Explore Services
+            </a>
+            <a
+              href="#contact"
+              className="rounded-2xl bg-white/90 text-gray-800 px-5 py-3 shadow hover:bg-white"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </section>
 
       {/* IMAGE GALLERY (seamless marquee) */}
-<section id="gallery" className="py-6 bg-gray-100">
-  <div className="max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
-    <motion.div
-      className="flex"
-      // We duplicate the images and only scroll half the track (-50%)
-      style={{ width: "200%" }}
-      animate={{ x: ["0%", "-50%"] }}
-      transition={{ repeat: Infinity, duration: 22, ease: "linear" }} // lower = faster
-    >
-      {[ // your images once...
-        "/images/Land-Development.png",
-        "/images/Property-Development-1.png",
-        "/images/Property-Development-2.png",
-        "/images/Redevelopment.png",
-        "/images/Addition.png",
-        "/images/Stormwater-capture.png",
-      // ...and again to loop seamlessly
-      ].concat([
-        "/images/Land-Development.png",
-        "/images/Property-Development-1.png",
-        "/images/Property-Development-2.png",
-        "/images/Redevelopment.png",
-        "/images/Addition.png",
-        "/images/Stormwater-capture.png",
-      ]).map((src, i) => (
-        <img
-          key={i}
-          src={src}
-          alt=""
-          className="h-56 md:h-64 lg:h-72 object-cover flex-shrink-0 rounded-none"
-          // Each image gets a fixed width so several are visible at once.
-          // Adjust w-[...%] to show more/less at a time.
-          style={{ width: "25%" }} // ~4 images visible; try "20%" for 5, "33.333%" for 3
-          loading="lazy"
-          draggable="false"
-        />
-      ))}
-    </motion.div>
-  </div>
-</section>
-
+      <section id="gallery" className="py-6 bg-gray-100">
+        <div className="max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
+          <motion.div
+            className="flex"
+            style={{ width: "200%" }}
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, duration: 22, ease: "linear" }}
+          >
+            {[
+              "/images/Land-Development.png",
+              "/images/Property-Development-1.png",
+              "/images/Property-Development-2.png",
+              "/images/Redevelopment.png",
+              "/images/Addition.png",
+              "/images/Stormwater-capture.png",
+            ]
+              .concat([
+                "/images/Land-Development.png",
+                "/images/Property-Development-1.png",
+                "/images/Property-Development-2.png",
+                "/images/Redevelopment.png",
+                "/images/Addition.png",
+                "/images/Stormwater-capture.png",
+              ])
+              .map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt=""
+                  className="h-56 md:h-64 lg:h-72 object-cover flex-shrink-0 rounded-none"
+                  style={{ width: "25%" }}
+                  loading="lazy"
+                  draggable="false"
+                />
+              ))}
+          </motion.div>
+        </div>
+      </section>
 
       {/* SERVICES */}
       <section id="services" className="py-16 md:py-24">
@@ -186,7 +170,6 @@ export default function HigherConsultingSite() {
           </p>
 
           <div className="mt-8 grid md:grid-cols-3 gap-6">
-            {/* 1) Property Development */}
             <ServiceCard
               icon={Building2}
               title="Property Development"
@@ -196,8 +179,6 @@ export default function HigherConsultingSite() {
                 "Construction management & owner’s rep services",
               ]}
             />
-
-            {/* 2) Redevelopment & Permit Assistance */}
             <ServiceCard
               icon={Workflow}
               title="Redevelopment & Permit Assistance"
@@ -207,8 +188,6 @@ export default function HigherConsultingSite() {
                 "Contractor bidding, plan check, and inspections support",
               ]}
             />
-
-            {/* 3) SCWP Feasibility Study Development */}
             <ServiceCard
               icon={Droplets}
               title="SCWP Feasibility Study Development"
