@@ -144,33 +144,35 @@ export default function HigherConsultingSite() {
       animate={{ x: ["0%", "-50%"] }}
       transition={{ repeat: Infinity, duration: 22, ease: "linear" }}
     >
-      {[
-        "/images/Land-Development.png",
-        "/images/Property-Development-1.png",
-        "/images/Property-Development-2.png",
-        "/images/Redevelopment.png",
-        "/images/Addition.png",
-        "/images/Stormwater-capture.png",
-      ]
-        .concat([
-          "/images/Land-Development.png",
-          "/images/Property-Development-1.png",
-          "/images/Property-Development-2.png",
-          "/images/Redevelopment.png",
-          "/images/Addition.png",
-          "/images/Stormwater-capture.png",
-        ])
-        .map((src, i) => (
-          <img
-            key={i}
-            src={src}
-            alt=""
-            className="h-56 md:h-64 lg:h-72 object-cover flex-shrink-0 rounded-none"
-            style={{ width: "25%" }}
-            loading="lazy"
-            draggable="false"
-          />
-        ))}
+      {(() => {
+        const v = "?v=fix-images-1"; // bump this string anytime you change an image
+        const images = [
+          "/images/Land-Development.png" + v,
+          "/images/Property-Development-1.png" + v,
+          "/images/Property-Development-2.png" + v,
+          "/images/Redevelopment.png" + v,
+          "/images/Addition.png" + v,
+          "/images/Stormwater-capture.png" + v,
+        ];
+        return images
+          .concat(images)
+          .map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt=""
+              className="h-56 md:h-64 lg:h-72 object-cover flex-shrink-0 rounded-none"
+              style={{ width: "25%" }}
+              loading="lazy"
+              draggable="false"
+              onError={(e) => {
+                console.warn("Missing image:", src);
+                e.currentTarget.style.opacity = 0.15;
+                e.currentTarget.alt = "Missing: " + src;
+              }}
+            />
+          ));
+      })()}
     </motion.div>
   </div>
 </section>
