@@ -251,46 +251,85 @@ export default function HigherConsultingSite() {
       </section>
 
       {/* CLIENTS */}
-      <section id="clients" className="py-16">
+      <section id="clients" className="py-16 bg-white border-t">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold">Who we support</h2>
-          <p className="mt-2 text-gray-700">
-            Counties, cities, special districts, and public agencies across
-            Southern California.
+          <p className="mt-2 text-gray-700 max-w-prose">
+          We help property owners, developers, and municipalities turn underused
+          land and existing assets into purposeful, compliant, and value-adding
+          spaces.
           </p>
-          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600">
-            {[
-              "County Departments",
-              "Public Works",
-              "Water Agencies",
-              "City Managers",
-              "Code Enforcement",
-              "Recovery Divisions",
-              "Planning",
-              "FEMA/PA Teams",
-            ].map((t, i) => (
-              <div key={i} className="rounded-xl border bg-white p-4 text-center">
-                {t}
-              </div>
-            ))}
+
+        <div className="mt-8 grid md:grid-cols-3 gap-6">
+        <div className="rounded-2xl border bg-gray-50 p-6 shadow-sm">
+          <h3 className="font-semibold text-lg text-blue-700">Private Property Owners</h3>
+          <p className="mt-2 text-sm text-gray-700">
+          Own land that’s sitting idle or an older building that needs work?
+          We help you assess feasibility, navigate code requirements, and plan
+          for profitable and compliant development.
+          </p>
+        </div>
+
+        <div className="rounded-2xl border bg-gray-50 p-6 shadow-sm">
+          <h3 className="font-semibold text-lg text-blue-700">Developers &amp; Builders</h3>
+          <p className="mt-2 text-sm text-gray-700">
+          Whether you’re adding units, expanding existing facilities, or pursuing
+          infill or adaptive-reuse projects, we provide entitlement, design, and
+          construction coordination support to keep things moving.
+          </p>
+        </div>
+  
+        <div className="rounded-2xl border bg-gray-50 p-6 shadow-sm">
+          <h3 className="font-semibold text-lg text-blue-700">Municipal &amp; Program Clients</h3>
+          <p className="mt-2 text-sm text-gray-700">
+          For cities, agencies, and SCWP partners, we assist with feasibility
+          studies, grant applications, stormwater capture project delivery, and
+          program reporting.
+            </p>
+            </div>
           </div>
         </div>
       </section>
-
+      
       {/* CAPABILITIES */}
-      <section id="capabilities" className="py-16 bg-white border-t">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold">Selected capabilities</h2>
-          <ul className="mt-4 grid md:grid-cols-2 gap-3 list-disc list-inside text-gray-700">
-            <li>SCWP feasibility studies and scoring support</li>
-            <li>FEMA Public Assistance documentation (PAPPG-aligned)</li>
-            <li>Production reporting and performance dashboards</li>
-            <li>Stakeholder coordination and chain-of-command comms</li>
-            <li>RFS intake and case management process design</li>
-            <li>Contractor oversight and quality assurance</li>
-          </ul>
-        </div>
-      </section>
+    <section id="capabilities" className="py-16 bg-white border-t">
+  <div className="max-w-6xl mx-auto px-4">
+    <h2 className="text-3xl font-bold">Selected capabilities</h2>
+    <p className="mt-2 text-gray-700 max-w-prose">
+      We bridge planning, engineering, and execution to help property owners and
+      municipalities move projects from concept to construction with clarity and confidence.
+    </p>
+
+    <ul className="mt-6 grid md:grid-cols-2 gap-3 list-disc list-inside text-gray-700 leading-relaxed">
+      <li>
+        <strong>Site evaluation and feasibility studies</strong> — zoning,
+        infrastructure, environmental constraints, and development potential.
+      </li>
+      <li>
+        <strong>Design and entitlement strategy</strong> — concept layouts,
+        grading and drainage, and permit pathway planning for additions,
+        remodels, or new builds.
+      </li>
+      <li>
+        <strong>Project management and coordination</strong> — aligning
+        architects, engineers, contractors, and agencies to maintain schedule and budget.
+      </li>
+      <li>
+        <strong>Construction oversight and compliance</strong> — plan check
+        assistance, field review, and documentation for inspections and occupancy.
+      </li>
+      <li>
+        <strong>Stormwater and green-infrastructure expertise</strong> — SCWP
+        project development, grant applications, and reporting for public and
+        private property improvements.
+      </li>
+      <li>
+        <strong>Funding and program support</strong> — Measure W, FEMA, and
+        infrastructure grants for resilient and sustainable site upgrades.
+      </li>
+    </ul>
+  </div>
+</section>
 
       {/* CONTACT */}
       <section id="contact" className="py-16">
