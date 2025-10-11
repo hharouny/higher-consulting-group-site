@@ -135,45 +135,45 @@ export default function HigherConsultingSite() {
         </div>
       </section>
 
-      {/* IMAGE GALLERY (seamless marquee) */}
-      <section id="gallery" className="py-6 bg-gray-100">
-        <div className="max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
-          <motion.div
-            className="flex"
-            style={{ width: "200%" }}
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 22, ease: "linear" }}
-          >
-            {[
-              "/images/Land-Development.png",
-              "/images/Property-Development-1.png",
-              "/images/Property-Development-2.png",
-              "/images/Redevelopment.png",
-              "/images/Addition.png",
-              "/images/Stormwater-capture.png",
-            ]
-              .concat([
-                "/images/Land-Development.png",
-                "/images/Property-Development-1.png",
-                "/images/Property-Development-2.png",
-                "/images/Redevelopment.png",
-                "/images/Addition.png",
-                "/images/Stormwater-capture.png",
-              ])
-              .map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt=""
-                  className="h-56 md:h-64 lg:h-72 object-cover flex-shrink-0 rounded-none"
-                  style={{ width: "25%" }}
-                  loading="lazy"
-                  draggable="false"
-                />
-              ))}
-          </motion.div>
-        </div>
-      </section>
+     {/* IMAGE GALLERY (seamless marquee) */}
+<section id="gallery" className="py-6 bg-gray-100">
+  <div className="max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
+    <motion.div
+      className="flex"
+      style={{ width: "200%" }}
+      animate={{ x: ["0%", "-50%"] }}
+      transition={{ repeat: Infinity, duration: 22, ease: "linear" }}
+    >
+      {[
+        "/images/Land-Development.png",
+        "/images/Property-Development-1.png",
+        "/images/Property-Development-2.png",
+        "/images/Redevelopment.png",
+        "/images/Addition.png",
+        "/images/Stormwater-capture.png",
+      ]
+        .concat([
+          "/images/Land-Development.png",
+          "/images/Property-Development-1.png",
+          "/images/Property-Development-2.png",
+          "/images/Redevelopment.png",
+          "/images/Addition.png",
+          "/images/Stormwater-capture.png",
+        ])
+        .map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt=""
+            className="h-56 md:h-64 lg:h-72 object-cover flex-shrink-0 rounded-none"
+            style={{ width: "25%" }}
+            loading="lazy"
+            draggable="false"
+          />
+        ))}
+    </motion.div>
+  </div>
+</section>
 
       {/* SERVICES */}
       <section id="services" className="py-16 md:py-24">
