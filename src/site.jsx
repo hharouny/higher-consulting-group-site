@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Building2,
   Droplets,
@@ -15,6 +15,21 @@ import {
 
 export default function HigherConsultingSite() {
   const [submitted, setSubmitted] = useState(false);
+
+  // --- HERO ROTATOR CONFIG (Listen → Design → Deliver) ---
+  const slides = [
+    { src: "/images/Listen.png",  title: "Listen",  colorClass: "text-blue-300" },
+    { src: "/images/Design.png",  title: "Design",  colorClass: "text-teal-300" },
+    { src: "/images/Deliver.png", title: "Deliver", colorClass: "text-indigo-300" },
+  ];
+  const [idx, setIdx] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setIdx((i) => (i + 1) % slides.length), 6000); // 6s per slide
+    return () => clearInterval(id);
+  }, []);
+
+  const current = slides[idx];
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
@@ -35,24 +50,12 @@ export default function HigherConsultingSite() {
             </div>
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#services" className="hover:text-blue-700">
-              Services
-            </a>
-            <a href="#approach" className="hover:text-blue-700">
-              Approach
-            </a>
-            <a href="#clients" className="hover:text-blue-700">
-              Clients
-            </a>
-            <a href="#contact" className="hover:text-blue-700">
-              Contact
-            </a>
-            <a href="#capabilities" className="hover:text-blue-700">
-              Capabilities
-            </a>
-            <a href="#faq" className="hover:text-blue-700">
-              FAQ
-            </a>
+            <a href="#services" className="hover:text-blue-700">Services</a>
+            <a href="#approach" className="hover:text-blue-700">Approach</a>
+            <a href="#clients" className="hover:text-blue-700">Clients</a>
+            <a href="#contact" className="hover:text-blue-700">Contact</a>
+            <a href="#capabilities" className="hover:text-blue-700">Capabilities</a>
+            <a href="#faq" className="hover:text-blue-700">FAQ</a>
           </nav>
           <a
             href="#contact"
@@ -63,46 +66,58 @@ export default function HigherConsultingSite() {
         </div>
       </header>
 
-      {/* HERO - Fade Transition */}
+      {/* HERO - Your images as background, text synced to image */}
       <section
         id="home"
         className="relative h-[550px] flex items-center justify-center text-center overflow-hidden"
       >
-        {/* Background image rotation */}
-        <motion.div className="absolute inset-0">
-          {[
-            "/images/listen.png",
-            "/images/design.png",
-            "/images/deliver.png",
-          ].map((img, i) => (
-            <motion.div
-              key={i}
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${img})` }}
-              initial={{ opacity: i === 0 ? 1 : 0 }}
-              animate={{ opacity: [i === 0 ? 1 : 0, 1, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 18,
-                ease: "easeInOut",
-                delay: i * 6,
-              }}
+        {/* Background image (cross-fade) */}
+        <div className="absolute inset-0">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={current.src}
+              src={current.src}
+              alt={current.title}
+              className="absolute inset-0 w-full h-full object-cover"
+              initial={{ opacity: 0.0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              fetchpriority="high"
             />
-          ))}
+          </AnimatePresence>
+          {/* Soft overlay for readability */}
           <div className="absolute inset-0 bg-black/40" />
-        </motion.div>
+        </div>
 
-        {/* Text overlay */}
+        {/* Text overlay (matches current image) */}
         <div className="relative z-10 text-white max-w-3xl px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold">
-            We <span className="text-blue-400">Listen</span>. We{" "}
-            <span className="text-teal-400">Design</span>. We{" "}
-            <span className="text-blue-300">Deliver</span>.
-          </h1>
+          <motion.h1
+            key={current.title}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="text-5xl md:text-6xl font-extrabold"
+          >
+            We{" "}
+            <span className={current.title === "Listen" ? current.colorClass : "text-white/80"}>
+              Listen
+            </span>
+            . We{" "}
+            <span className={current.title === "Design" ? current.colorClass : "text-white/80"}>
+              Design
+            </span>
+            . We{" "}
+            <span className={current.title === "Deliver" ? current.colorClass : "text-white/80"}>
+              Deliver
+            </span>
+            .
+          </motion.h1>
+
           <p className="mt-4 text-lg md:text-xl text-gray-200">
-            Practical engineering and realty expertise for property and
-            infrastructure development.
+            Practical engineering and realty expertise for property and infrastructure development.
           </p>
+
           <div className="mt-8 flex justify-center gap-4">
             <a
               href="#services"
