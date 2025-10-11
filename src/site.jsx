@@ -146,10 +146,10 @@ export default function HigherConsultingSite() {
       // Updated order: Construction-management placed before Property-Development-1
       const images = [
         "/images/Land-Development.png" + v,
-        "/images/Redevelopment.png" + v,
         "/images/Construction-management.png" + v, // <-- new image replacing Property-Development-2
         "/images/Property-Development-1.png" + v,
         "/images/Addition.png" + v,
+        "/images/Redevelopment.png" + v,
         "/images/stormwater-capture.png" + v,
       ];
 
