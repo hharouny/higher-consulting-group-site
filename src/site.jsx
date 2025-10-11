@@ -150,7 +150,7 @@ export default function HigherConsultingSite() {
         "/images/Construction-management.png" + v, // <-- new image replacing Property-Development-2
         "/images/Property-Development-1.png" + v,
         "/images/Addition.png" + v,
-        "/images/Stormwater-capture.png" + v,
+        "/images/stormwater-capture.png" + v,
       ];
 
       // Duplicate for seamless loop
