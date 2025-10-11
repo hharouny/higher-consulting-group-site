@@ -33,22 +33,24 @@ export default function HigherConsultingSite() {
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
-      {/* NAV */}
-      <header className="sticky top-0 z-30 backdrop-blur bg-white/80 border-b">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-2xl bg-blue-600 flex items-center justify-center shadow text-white font-bold">
-              H
-            </div>
-            <div>
-              <p className="text-sm tracking-wide text-gray-600">
-                Higher Consulting Group, LLC
-              </p>
-              <h1 className="text-lg font-semibold leading-4">
-                Engineering & Realty Services
-              </h1>
-            </div>
-          </a>
+  {/* NAV */}
+  <header className="sticky top-0 z-30 backdrop-blur bg-white/80 border-b">
+    <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" className="flex items-center gap-3">
+        <img
+          src="/images/logo.png"
+          alt="Higher Consulting Group logo"
+          className="h-10 w-auto"
+        />
+        <div>
+          <p className="text-sm tracking-wide text-gray-600">
+            Higher Consulting Group
+          </p>
+          <h1 className="text-lg font-semibold leading-4">
+            Engineering & Realty Services
+          </h1>
+        </div>
+      </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#services" className="hover:text-blue-700">Services</a>
             <a href="#approach" className="hover:text-blue-700">Approach</a>
