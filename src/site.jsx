@@ -197,29 +197,29 @@ export default function HigherConsultingSite() {
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             <ServiceCard
               icon={Building2}
-              title="Property Development"
+              title="Property & Site Development"
               bullets={[
-                "Land acquisition support & early due diligence (title, survey, environmental, utilities)",
+                "Site selection, feasibility, and due diligence support",
                 "Planning, zoning, and civil engineering services",
-                "Construction management & owner’s rep services",
+                "Construction management and owner representation",
               ]}
             />
             <ServiceCard
               icon={Workflow}
-              title="Redevelopment & Permit Assistance"
+              title="Additions, Alterations & Permitting"
               bullets={[
-                "Small-scale redevelopment projects including additions and alterations",
-                "Entitlements, permits, and agency coordination",
-                "Contractor bidding, plan check, and inspections support",
+                "Residential and commercial additions or remodels",
+                "Entitlements, permitting, and plan check support",
+                "Contractor bidding, coordination, and inspections",
               ]}
             />
             <ServiceCard
               icon={Droplets}
-              title="SCWP Feasibility Study Development"
+              title="Safe Clean Water (SCW) Program Support"
               bullets={[
-                "Needs assessment: identify priorities, sites, and constraints",
-                "Concept development & benefit analysis (water quality/supply, community)",
-                "Prepare applications for Infrastructure Program funding (SCWP)",
+                "Identify and evaluate stormwater capture and infiltration opportunities",
+                "Develop project concepts and quantify water quality, supply, and community benefits",
+                "Prepare SCW feasibility studies, funding applications, and program reporting materials",
               ]}
             />
           </div>
@@ -300,33 +300,36 @@ export default function HigherConsultingSite() {
     </p>
 
     <ul className="mt-6 grid md:grid-cols-2 gap-3 list-disc list-inside text-gray-700 leading-relaxed">
-      <li>
-        <strong>Site evaluation and feasibility studies</strong> — zoning,
-        infrastructure, environmental constraints, and development potential.
-      </li>
-      <li>
-        <strong>Design and entitlement strategy</strong> — concept layouts,
-        grading and drainage, and permit pathway planning for additions,
-        remodels, or new builds.
-      </li>
-      <li>
-        <strong>Project management and coordination</strong> — aligning
-        architects, engineers, contractors, and agencies to maintain schedule and budget.
-      </li>
-      <li>
-        <strong>Construction oversight and compliance</strong> — plan check
-        assistance, field review, and documentation for inspections and occupancy.
-      </li>
-      <li>
-        <strong>Stormwater and green-infrastructure expertise</strong> — SCWP
-        project development, grant applications, and reporting for public and
-        private property improvements.
-      </li>
-      <li>
-        <strong>Funding and program support</strong> — Measure W, FEMA, and
-        infrastructure grants for resilient and sustainable site upgrades.
-      </li>
-    </ul>
+  {/* Property & Site Development */}
+  <li>
+    <strong>Site evaluation and feasibility studies</strong> — zoning, infrastructure,
+    environmental conditions, and development potential.
+  </li>
+  <li>
+    <strong>Design and entitlement strategy</strong> — concept layouts, grading,
+    and permit pathways for new or redevelopment projects.
+  </li>
+  <li>
+    <strong>Project management and coordination</strong> — aligning architects,
+    engineers, contractors, and agencies to maintain schedule and budget.
+  </li>
+
+  {/* Additions, Alterations & Permitting */}
+  <li>
+    <strong>Construction oversight and compliance</strong> — plan check,
+    field review, and documentation for inspections and occupancy.
+  </li>
+  <li>
+    <strong>Additions and adaptive reuse expertise</strong> — modernization,
+    expansions, and site improvements for existing developments.
+  </li>
+
+  {/* Safe Clean Water (SCW) Program Support */}
+  <li>
+    <strong>Stormwater and SCW Program expertise</strong> — feasibility studies,
+    benefit quantification, and program reporting for municipal partners.
+  </li>
+</ul>
   </div>
 </section>
 
@@ -373,7 +376,7 @@ export default function HigherConsultingSite() {
                 <input
                   type="email"
                   className="mt-1 w-full rounded-xl border px-3 py-2"
-                  placeholder="you@example.gov"
+                  placeholder="you@example.com"
                   required
                 />
               </div>
