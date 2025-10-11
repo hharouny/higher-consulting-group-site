@@ -135,34 +135,41 @@ export default function HigherConsultingSite() {
         </div>
       </section>
 
-     {/* IMAGE GALLERY (seamless marquee) */}
+     {/* IMAGE GALLERY (seamless marquee, shows all images before looping) */}
 <section id="gallery" className="py-6 bg-gray-100">
   <div className="max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-lg">
-    <motion.div
-      className="flex"
-      style={{ width: "200%" }}
-      animate={{ x: ["0%", "-50%"] }}
-      transition={{ repeat: Infinity, duration: 22, ease: "linear" }}
-    >
-      {(() => {
-        const v = "?v=fix-images-1"; // bump this string anytime you change an image
-        const images = [
-          "/images/Land-Development.png" + v,
-          "/images/Property-Development-1.png" + v,
-          "/images/Property-Development-2.png" + v,
-          "/images/Redevelopment.png" + v,
-          "/images/Addition.png" + v,
-          "/images/Stormwater-capture.png" + v,
-        ];
-        return images
-          .concat(images)
-          .map((src, i) => (
+    {(() => {
+      // Fixed tile width ensures we traverse all originals before the loop
+      const TILE_W = 360; // px (adjust if you want larger/smaller tiles)
+      const v = "?v=fix-images-2"; // bump to bust cache
+
+      // Updated order: Construction-management placed before Property-Development-1
+      const images = [
+        "/images/Land-Development.png" + v,
+        "/images/Redevelopment.png" + v,
+        "/images/Construction-management.png" + v, // <-- new image replacing Property-Development-2
+        "/images/Property-Development-1.png" + v,
+        "/images/Addition.png" + v,
+        "/images/Stormwater-capture.png" + v,
+      ];
+
+      // Duplicate for seamless loop
+      const track = images.concat(images);
+
+      return (
+        <motion.div
+          className="flex"
+          style={{ width: `${track.length * TILE_W}px` }}
+          animate={{ x: [0, -images.length * TILE_W] }} // travel exactly one full set
+          transition={{ duration: images.length * 4, ease: "linear", repeat: Infinity }}
+        >
+          {track.map((src, i) => (
             <img
               key={i}
               src={src}
               alt=""
-              className="h-56 md:h-64 lg:h-72 object-cover flex-shrink-0 rounded-none"
-              style={{ width: "25%" }}
+              className="h-56 md:h-64 lg:h-72 object-cover flex-shrink-0"
+              style={{ width: `${TILE_W}px` }}
               loading="lazy"
               draggable="false"
               onError={(e) => {
@@ -171,9 +178,10 @@ export default function HigherConsultingSite() {
                 e.currentTarget.alt = "Missing: " + src;
               }}
             />
-          ));
-      })()}
-    </motion.div>
+          ))}
+        </motion.div>
+      );
+    })()}
   </div>
 </section>
 
