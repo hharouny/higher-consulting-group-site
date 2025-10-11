@@ -296,8 +296,7 @@ export default function HigherConsultingSite() {
   <div className="max-w-6xl mx-auto px-4">
     <h2 className="text-3xl font-bold">Selected capabilities</h2>
     <p className="mt-2 text-gray-700 max-w-prose">
-      We bridge planning, engineering, and execution to help property owners and
-      municipalities move projects from concept to construction with clarity and confidence.
+      We bridge planning, engineering, and execution to help property owners and municipalities move projects from concept to construction with clarity and confidence.
     </p>
 
     <ul className="mt-6 grid md:grid-cols-2 gap-3 list-disc list-inside text-gray-700 leading-relaxed">
@@ -344,7 +343,7 @@ export default function HigherConsultingSite() {
                 <Mail className="w-4 h-4" /> hello@higherconsultinggroup.com
               </p>
               <p className="flex items-center gap-2">
-                <Phone className="w-4 h-4" /> (###) ###-####
+                <Phone className="w-4 h-4" /> (909) 630-9843
               </p>
               <p className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" /> Southern California • Available statewide
@@ -379,10 +378,10 @@ export default function HigherConsultingSite() {
                 />
               </div>
               <div>
-                <label className="text-sm">Organization</label>
+                <label className="text-sm">Company / Agency</label>
                 <input
                   className="mt-1 w-full rounded-xl border px-3 py-2"
-                  placeholder="Agency / Department"
+                  placeholder="Organization Name"
                 />
               </div>
               <div>
